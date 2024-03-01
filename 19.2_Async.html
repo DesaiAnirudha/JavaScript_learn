@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chaii aur JS</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button><br><br>
+    
+
+
+    <script>
+         const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+
+    const intervalId = setInterval(sayDate, 1000, "hi")
+
+    clearInterval(intervalId)
+
+
+
+
+        const str = function(name){
+            console.log(name, "Hello wlc to js")
+        }
+
+        document.querySelector('#start').addEventListener('click',function(){
+            const intr = setInterval(str, 1000,"ani")//1000 is imp otherwise provide error
+
+            document.querySelector("#stop").addEventListener('click',function(){
+            clearInterval(intr)// not outside of first function becaz of scope (intr)
+        })
+        
+    })  
+
+    </script>
+
+
+
+</body>
+</html>

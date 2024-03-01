@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chaii aur Code</h1>
+    <button id="stop">Stop</button>
+
+
+    <script>
+        // setTimeout(function(){
+        //     console.log("hii ani")   // print after 2 Sec
+        // }, 2000)  //time
+
+        // or.......
+
+        // const browse=function(){
+        //     console.log("hii ani")  
+        // }
+
+        // setTimeout(browse, 2000)
+
+
+
+        // const changeText=()=>{
+        //     document.querySelector('h1').innerHTML= "Javascript is Easy"
+        // }
+
+        // setTimeout(changeText,2000)
+ 
+
+
+        //     clear Timeout .......
+
+        //     const changeVal=function(){
+        //         console.log("changed successfully")
+        //     }
+
+        //    const changeText =setTimeout(changeVal,2000)
+
+        //    clearTimeout(changeText)  //........basic
+
+        
+        const stopping=function(){
+            document.querySelector('h1').innerHTML="js is easy"
+        }
+
+        const stopped=setTimeout(stopping,2000)
+
+        document.querySelector('#stop').addEventListener('click',function(){
+            console.log("changing stopped")
+            clearTimeout(stopped)
+        })
+
+
+
+
+    </script>
+</body>
+</html>

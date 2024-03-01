@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: rgb(22, 55, 83);" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+
+    const Eve=document.getElementById('owl')
+
+    // Eve.onclick=function(){
+    //     alert("owl image Clicked")
+    // }
+
+
+
+    // Eve.addEventListener('click',function(){
+    //         alert("owl clicked")
+    // })
+    
+
+    // Eve.addEventListener('click',function(e){
+    //     alert("hello!!!")
+    //     console.log(e)
+    //     console.log(e.type)
+    //     console.log(e.timeStamp)
+    //     console.log(e.target)
+    //     console.log(e.screenX)
+    //     console.log(e.screenY)  
+
+    // },false)
+
+
+
+
+    //     event propogation=> true or false    1.Event Bubbling .....  default false          2.event capturing.......true
+
+
+// const bubblingUp=document.querySelector('#images')
+// bubblingUp.addEventListener('click',function(e){
+//     console.log("clicked inside the ul")
+// }, false)
+
+// const bubblingUp2= document.querySelector('#owl')
+// bubblingUp2.addEventListener('click',function(e){
+//     console.log("clicked owl")
+// }, false)
+
+// clicked owl
+// clicked inside the ul........bottom to top
+
+
+
+
+// const capturing=document.querySelector('#images')
+// capturing.addEventListener('click',function(e){
+//     console.log("clicked inside the ul")
+// }, true)
+
+// const capturing2= document.querySelector('#owl')
+// capturing2.addEventListener('click',function(e){
+//     console.log("clicked owl")
+// }, true)
+
+// clicked inside the ul 
+// clicked owl..........top to bottom
+
+
+
+
+
+// const bubblingUp=document.querySelector('#images')
+// bubblingUp.addEventListener('click',function(e){
+//     console.log("clicked inside the ul")
+// }, false)
+
+// const bubblingUp2= document.querySelector('#owl')
+// bubblingUp2.addEventListener('click',function(e){
+//     console.log("clicked owl")
+//     e.stopPropagation()
+// }, false)
+
+// //  stop bubbling up 
+
+
+
+
+
+
+// const stopBehaviour=document.querySelector('#google')
+// stopBehaviour.addEventListener('click', function(e){
+//         e.preventDefault()
+//         e.stopPropagation()
+//         console.log("clicked on Google")
+// }, false)
+
+// print "clicked on google" but not visiting on google website
+
+
+
+
+
+
+// const removeImg=document.querySelector('#images')
+// removeImg.addEventListener('click', function(e){
+//     // console.log(e.target.tagName)
+//      console.log(e.target.parentNode)// we take parent node becaz if we remove image then list bullets not removes so we have to remove image's parent which is LI tag
+//      let removeIt=e.target.parentNode// if we click on li bullets then it delete all images so we want to use lopps......spillover effect
+//           removeIt.remove()
+
+
+
+// }, false)
+
+
+const removeImg=document.querySelector('#images')
+removeImg.addEventListener('click', function(e){
+    console.log(e.target.tagName)
+    console.log(e.target.parentNode)
+    console.log(e.target.id)
+
+        if(e.target.tagName==='IMG')//
+        {
+            let removeIt=e.target.parentNode
+            removeIt.remove()
+        }
+
+
+
+}, false)
+
+
+
+</script>
+</html>

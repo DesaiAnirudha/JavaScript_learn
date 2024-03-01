@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+       
+    
+    function changingColor(){
+        let hex='0123456789ABCDEF';
+        let color='#';
+        
+
+        for (let i=0; i<6; i++) {
+            color += hex[Math.floor(Math.random()*16)]
+            
+        }
+            return color
+           }
+        //console.log(color)
+
+        let changeColor=function(){
+            //document.body.style.backgroundColor=color//red 1 color print each time if we not use function in color
+            document.body.style.backgroundColor=changingColor()
+        }
+
+        let chg;
+        document.querySelector('#start').addEventListener('click',function(){
+            if(chg==null)
+           chg =setInterval(changeColor,1000)
+        })
+
+        document.querySelector('#stop').addEventListener('click',function(){
+           clearInterval(chg)
+           chg=null
+        })
+        
+
+    </script>
+</body>
+</html>
